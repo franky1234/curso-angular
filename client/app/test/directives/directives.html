@@ -29,12 +29,60 @@
     </ul>
 </div>
 
+<div>
+    <select ng-model="vm.selection" ng-options="item for item in vm.items()">
+    </select> 
+        <code>selection-{{vm.selection}}</code>   
+    <div class="option-switch-container" ng-switch on = "vm.selection">
+        <div class="option-switch" ng-switch-when="name"> Name...</div>
+        <div class="option-switch" ng-switch-when="lastname"> Last name...</div>
+        <div class="option-switch" ng-switch-default> Other...</div>
+    </div>
+</div>
 
+<div ng-switch="vm.message">
+    <div ng-switch-when="admin">
+        Im a admin
+    </div>
+    <div ng-switch-when="user">
+        Im a user
+    </div>
+    <div ng-switch-when="author">
+        Im a author
+    </div>
+    <div ng-switch-default>
+        Default code
+    </div>
+</div>
+<div>
+    Expression:  {{vm.message}}
+    <p>
+    Binding : 
+    <p ng-bind="vm.message">
+</div>
+<my-input name="vm.message"></my-input>
+<div my-input=""></div>
+<div class="my-input"></div>
+<div>
+    <p> Today date : {{ vm.timeNow | date: 'dd-MM-yyyy'}}</p>
+    <pre> {{ vm.myObject | json }}</pre>
+    <p>Price $: {{ vm.price | currency}} </p>
+    <p>Price Bs: {{ vm.price | currency:'Bs.'}} </p>
+    <p>Price Bs: {{ vm.price | currency:'Bs.':'0'}} </p>
+    <input type="number" ng-model="vm.price"/>
+    asdas
+    <ul>
+        <li ng-repeat="user in vm.users | limitTo:10 | orderBy:'age' ">{{user.name }}</li>
+    </ul>
+    <p> Custom Filter:{{vm.message | myFilter:'M'}}</p>
+    <p> Lower Angular : {{vm.filterLower}} </p>
+</div>
 
-
-
-
-
+<div>
+    <p> date Custom:{{ vm.myDate }}</p>
+    
+    <p> date filter : {{ vm.filterDate }}</p> 
+</div>
 
 
 
