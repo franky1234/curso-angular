@@ -1,10 +1,12 @@
 'use strict';
 
 angular.module('uiApp')
-  .controller('JavaCtrl', function () {
+  .controller('JavaCtrl', function ($resource) {
     //http://ui-grid.info/  for references.
     var vm = this;
-
+    console.log('inside java....');
+    //vm.students = $resource('/api/cursos/java').then;//
+    console.log('its::::::'+vm.students);
     vm.myData = [
                   { 
                     name : 'Pepe' , 

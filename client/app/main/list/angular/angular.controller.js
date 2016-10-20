@@ -35,9 +35,12 @@ angular.module('uiApp')
     vm.tableParams = new NgTableParams({},{dataset:data});
 
     vm.editUser = editUser;
-
+    vm.show = true;
     function editUser( user ){
-      console.log('this is :' + JSON.stringify(user));
+      console.log('this is :' + JSON.stringify(user)+ '..' + vm.show);
+      vm.myUser = user;
+      vm.show = !vm.show ;
+      
     };
 
   });
